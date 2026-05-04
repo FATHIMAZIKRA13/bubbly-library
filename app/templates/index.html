@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold">Welcome to Bubbly Library 💖</h1>
+    <p class="lead text-muted">Your cozy corner for books and stories</p>
+    <img src="https://source.unsplash.com/random/800x400/?books,pink" class="img-fluid rounded-4 shadow my-4" alt="Books">
+</div>
+
+<div class="row mt-5">
+    {% for book in books %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-text text-muted">by {{ book.author }}</p>
+                <p><strong>Available:</strong> {{ book.available }} / {{ book.quantity }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
